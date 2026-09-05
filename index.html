@@ -1,116 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Excel Pro GH - Kenny Murray</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Excel Pro GH — Kenny Murray — 7 Best-Selling Systems in GHS ¢ — Premium V8</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
-body{background:#0f1e3d;color:#fff}
-.hero{text-align:center;padding:50px 20px 20px}
-.hero h1{font-size:38px;line-height:1.1;font-weight:900}
-.hero h1 span{color:#fbbf24}
-.hero p{color:#94a3b8;margin-top:15px;max-width:600px;margin-left:auto;margin-right:auto;font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;padding:20px;max-width:1200px;margin:0 auto}
-.card{background:#1a2d5a;border-radius:18px;overflow:hidden;cursor:pointer;border:1px solid #2a3f6f;transition:.2s;position:relative;-webkit-tap-highlight-color:transparent}
-.card:active{transform:scale(0.98)}
-.card-img{height:210px;background:#0a1430;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover;pointer-events:none;display:block}
-.card-body{padding:18px}
-.card-body h3{font-size:16px;font-weight:800}
-.card-body.sub{color:#fbbf24;font-size:12px;margin:8px 0;font-weight:700}
-.card-body.desc{color:#9fb0d0;font-size:12px;line-height:1.5;height:36px;overflow:hidden}
-.meta{margin-top:14px;display:flex;justify-content:space-between;align-items:center}
-.badge{background:#0f1e3d;border:1px solid #2a3f6f;color:#7aa0d6;padding:5px 10px;border-radius:20px;font-size:10px}
-.price{background:#fbbf24;color:#000;padding:8px 16px;border-radius:20px;font-weight:900;font-size:12px}
-/* MODAL - NEW */
-#modal{position:fixed;inset:0;background:rgba(2,10,30,0.92);backdrop-filter:blur(8px);z-index:99999;display:none;padding:12px;overflow-y:auto}
+body{background:#081330;color:#cbd5e1}
+.top{max-width:1000px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:16px 20px}
+.logo{color:#fbbf24;font-weight:900;font-size:20px}
+.hire{background:#fbbf24;color:#000;padding:10px 22px;border-radius:24px;font-weight:900;font-size:14px;text-decoration:none}
+.hero-wrap{max-width:1000px;margin:auto;padding:0 20px}
+.hero{height:560px;border-radius:28px;background:#0f2244 url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d') center/cover;position:relative;border:1px solid #1e3a6a;overflow:hidden}
+.badge{position:absolute;bottom:14px;left:14px;right:14px;background:#13265a;border:1px solid #2a4a8a;border-radius:14px;padding:12px;display:flex;gap:8px;align-items:center;font-size:12px}
+.badge b{color:#fbbf24}
+.wrap{max-width:1000px;margin:auto;padding:20px}
+.small{color:#fbbf24;letter-spacing:2px;font-size:11px;font-weight:800;margin-top:18px}
+h1{color:#fff;font-size:38px;line-height:1.1;font-weight:900;margin-top:8px}
+h1 span{color:#fbbf24}
+.desc{color:#8fa0c0;line-height:1.7;font-size:14px;margin-top:14px}
+.desc b{color:#fff}
+.btns{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+.btn-y{background:#fbbf24;color:#000;padding:16px;border-radius:30px;text-align:center;font-weight:900;text-decoration:none}
+.btn-o{border:1.5px solid #2a4a7a;color:#cbd5e1;padding:14px;border-radius:30px;text-align:center;font-weight:600;text-decoration:none}
+.stats{display:flex;justify-content:space-between;padding:20px 0;border-top:1px solid #13265a;margin-top:20px}
+.stats b{color:#fbbf24;font-size:20px;display:block}.stats span{font-size:12px;color:#7a8ab0}
+.sec-dark{background:#0c1d43;margin-top:10px;padding:30px 0}
+.sec-title{text-align:center;padding:20px}
+.sec-title h2{color:#fff;font-size:32px;font-weight:900;line-height:1.1}.sec-title h2 span{color:#fbbf24}
+.sec-title p{color:#7a8ab0;font-size:13px;margin-top:8px}
+.card{background:#142a5e;border:1px solid #23407f;border-radius:20px;padding:22px;margin:16px 20px;max-width:1000px}
+.card h3{color:#fbbf24;margin-bottom:10px;font-size:18px}
+.card p{color:#8fa0c0;font-size:14px;line-height:1.7}
+.p-grid{max-width:1000px;margin:auto;padding:10px 16px;display:flex;flex-direction:column;gap:22px}
+.p-card{background:#162d64;border-radius:22px;overflow:hidden;cursor:pointer;border:1px solid #26407f}
+.p-card img{width:100%;display:block;pointer-events:none}
+.p-body{padding:16px}.p-body h3{color:#fff;font-size:16px}.p-sub{color:#fbbf24;font-size:12px;font-weight:700;margin:6px 0}.p-txt{color:#8fa0c0;font-size:13px;line-height:1.5}
+.pills{margin-top:10px}.pill{background:#0f2244;border:1px solid #2a4a7a;color:#8fa0c0;padding:6px 12px;border-radius:20px;font-size:11px;margin-right:6px;display:inline-block}
+.p-foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.price-btn{background:#fbbf24;color:#000;padding:10px 18px;border-radius:20px;font-weight:900;font-size:13px}
+.contact-box{background:#142a5e;border:1px solid #23407f;border-radius:20px;padding:22px;margin:16px 20px}
+.input{background:#081330;border:1px solid #1e3a6a;border-radius:12px;padding:14px;color:#fff;width:100%;margin-top:10px}
+.footer{text-align:center;padding:30px 20px;color:#7a8ab0;font-size:12px;line-height:1.8}
+.footer b{color:#fbbf24}
+/* MODAL ONE-CLICK */
+#modal{position:fixed;inset:0;background:rgba(3,12,32,.94);backdrop-filter:blur(12px);z-index:99999;display:none;padding:10px;overflow-y:auto}
 #modal.open{display:flex;justify-content:center;align-items:flex-start}
-.modal-box{background:#fff;color:#0f172a;width:100%;max-width:900px;border-radius:20px;overflow:hidden;margin:20px auto;animation:pop.25s ease}
-@keyframes pop{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}
-.modal-top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #e2e8f0}
-.modal-top h2{font-size:18px;font-weight:900}
-.modal-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px;background:#f1f5f9}
-.modal-gallery img{width:100%;border-radius:10px;border:1px solid #e2e8f0;background:#fff}
-.modal-info{padding:18px}
-.btn-wa{display:block;background:#25D366;color:#fff;text-align:center;padding:16px;border-radius:12px;text-decoration:none;font-weight:900;margin-top:14px}
-.close-btn{font-size:28px;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#f1f5f9}
-@media(max-width:600px){.modal-gallery{grid-template-columns:1fr}.hero h1{font-size:32px}}
+.mbox{background:#fff;color:#0f172a;width:100%;max-width:900px;border-radius:20px;overflow:hidden;margin:20px auto}
+.mtop{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #e2e8f0}
+.mgal{padding:12px;background:#f1f5f9;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mgal img{width:100%;border-radius:12px;border:1px solid #e2e8f0}
+.minfo{padding:18px}.wa{display:block;background:#25D366;color:#fff;text-align:center;padding:16px;border-radius:12px;font-weight:900;margin-top:14px;text-decoration:none}
+.close{width:36px;height:36px;background:#f1f5f9;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer}
+.float{position:fixed;bottom:20px;right:20px;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:5000}
+@media(max-width:600px){.mgal{grid-template-columns:1fr} h1{font-size:32px}}
 </style>
 </head>
 <body>
 
-<div class="hero">
-<h1>My Portfolio — <span>7</span><br><span>Best-Selling</span><br>Systems</h1>
-<p>Built for Ghana, priced in GHS ₵, offline-ready, no subscription — Premium 2026 Edition. Tap any card to view full screenshots.</p>
+<div class="top"><div class="logo">Excel Pro GH</div><a class="hire" href="https://wa.me/233548097756">Hire Me</a></div>
+
+<div class="hero-wrap"><div class="hero"><div class="badge"><span style="background:#22c55e;padding:4px;border-radius:4px">✅</span><b>Available Now</b> — Accra, Ghana 🇬🇭 — 7 Best-Selling Systems</div></div></div>
+
+<div class="wrap">
+<div class="small">HELLO, I'M KENNY MURRAY</div>
+<h1>Data Analyst | <span>Website Developer</span> | Excel Systems Builder</h1>
+<p class="desc">I build powerful Excel systems that save time and make money. Creator of <b>Data Cleaning Systems, Personal Budget Tracker (¢ GHS) & Auto Inventory + Invoice System</b> — Trusted by 25+ clients in Accra & worldwide.</p>
+<p style="margin-top:14px;font-size:13px">📧 contact.excelprogh@gmail.com | 📱 WhatsApp: +233 548 097 756</p>
+<div class="btns">
+<a class="btn-y" href="https://wa.me/233548097756?text=Hi%20Kenny%20I%20want%20to%20hire%20you">💬 WhatsApp: +233 548 097 756</a>
+<a class="btn-o" href="mailto:contact.excelprogh@gmail.com">📧 Email: contact.excelprogh@gmail.com</a>
+<a class="btn-o" href="#portfolio">View Portfolio (7 Systems) →</a>
+</div>
+<div class="stats"><div><b>5+ Years</b><span>Experience</span></div><div><b>40+ Projects</b><span>Delivered</span></div><div><b>25+ Clients</b><span>Trusted</span></div></div>
 </div>
 
-<div class="grid" id="grid"></div>
+<div class="sec-dark">
+<div class="sec-title"><h2>About <span>Excel Pro GH</span><br>Agency</h2><p>Kenny Murray — 7 Services — GHS ¢ Pricing — Offline-Ready — No Subscription — Built for Ghana SMEs</p></div>
+<div class="card"><h3>Who I Am</h3><p>I'm <b style="color:#fff">Kenny Murray</b>, CEO Excel Pro GH, Accra. Started with Excel systems in GHS ¢ for Makola & Abossey Okai traders, now full digital agency helping SMEs save time, cut costs & grow revenue.<br><br>We build <b style="color:#fff">business systems</b>: automated, offline, no subscription — from data cleaning that saves 96% time (4hrs → 12min) to e-commerce websites & 24/7 customer support teams.</p><p style="margin-top:14px">📧 <b style="color:#fbbf24">Email:</b> contact.excelprogh@gmail.com<br>📱 <b style="color:#fbbf24">WhatsApp:</b> +233 548 097 756</p></div>
+<div class="card"><h3>My 7 Core Services — GHS ¢</h3>
+<p onclick="openM(0)" style="cursor:pointer;margin:10px 0">🧹 <b style="color:#fff">Data Cleaning Systems — ¢200</b><br>10K rows, Power Query, 1-click, 96% saved</p>
+<p onclick="openM(1)" style="cursor:pointer;margin:10px 0">💰 <b style="color:#fff">Budget Tracker Ghana — ¢150</b><br>GHS ¢ Income/Expense/Savings + charts</p>
+<p onclick="openM(2)" style="cursor:pointer;margin:10px 0">📋 <b style="color:#fff">Inventory + Invoice Makola — ¢300</b><br>1,248 stock, ¢85,420 sales, VAT invoice</p>
+<p onclick="openM(3)" style="cursor:pointer;margin:10px 0">📊 <b style="color:#fff">Data Analytics — ¢250</b><br>KPI dashboards, sales reports, insights</p>
+<p onclick="openM(4)" style="cursor:pointer;margin:10px 0">💻 <b style="color:#fff">Website Developer — From ¢500</b><br>Responsive, landing pages, e-commerce, SEO</p>
+<p onclick="openM(5)" style="cursor:pointer;margin:10px 0">🎧 <b style="color:#fff">VA Assistant — ¢400/mo</b><br>Email, calendar, data entry, research</p>
+<p onclick="openM(6)" style="cursor:pointer;margin:10px 0">📞 <b style="color:#fff">Customer Support & Ops — ¢350/mo</b><br>24/7 Call, Chat, CRM, Helpdesk, SLA</p>
+</div>
 
-<!-- ONE CLICK MODAL -->
-<div id="modal" onclick="if(event.target.id==='modal') closeModal()">
-<div class="modal-box">
-<div class="modal-top">
-<h2 id="mTitle"></h2>
-<div class="close-btn" onclick="closeModal()">×</div>
+<div class="sec-title" id="portfolio"><h2>My Portfolio — <span>7<br>Best-Selling<br>Systems</span></h2><p>Built for Ghana, priced in GHS ¢, offline-ready, no subscription — Premium 2026 Edition<br><span style="color:#fbbf24">👆 Tap any card to see full screenshots</span></p></div>
+<div class="p-grid" id="grid"></div>
+
+<div class="sec-title"><h2>Contact <span>Kenny<br>Murray</span></h2><p>📧 Email + 💬 WhatsApp + 📍 Accra, Ghana — Reply within 1 hour</p></div>
+<div class="contact-box">
+<h3 style="color:#fbbf24">Let's Talk Business</h3>
+<p style="margin-top:14px">📧 <b style="color:#fbbf24">Email:</b></p><p style="color:#fff;font-weight:800">contact.excelprogh@gmail.com</p>
+<p style="margin-top:16px">📱 <b style="color:#fbbf24">WhatsApp:</b></p><p style="color:#fff;font-weight:800">+233 548 097 756</p>
+<p style="margin-top:16px">📍 <b style="color:#fbbf24">Location:</b></p><p style="color:#fff">Accra, Greater Accra, Ghana</p>
+<p style="margin-top:16px">👤 <b style="color:#fbbf24">Name:</b></p><p style="color:#fff">Kenny Murray | Excel Pro GH</p>
+<a class="btn-y" style="display:block;margin-top:20px" href="https://wa.me/233548097756">💬 Chat on WhatsApp Now</a>
+<a class="btn-o" style="display:block;margin-top:12px" href="mailto:contact.excelprogh@gmail.com">📧 Send Email Now — contact.excelprogh@gmail.com</a>
+<input class="input" placeholder="Your Name">
+<input class="input" placeholder="Your Email / WhatsApp">
+<textarea class="input" rows="3" placeholder="Which of the 7 services do you need?"></textarea>
+<a class="btn-y" style="display:block;margin-top:14px" href="mailto:contact.excelprogh@gmail.com">Send Email to contact.excelprogh@gmail.com</a>
+<p style="text-align:center;color:#7a8ab0;font-size:11px;margin-top:10px">Or email directly: <b style="color:#fbbf24">contact.excelprogh@gmail.com</b><br>We reply within 1 hour — 7AM to 10PM GMT</p>
 </div>
-<div class="modal-gallery" id="mGallery"></div>
-<div class="modal-info">
-<p id="mPrice" style="color:#16a34a;font-weight:900;font-size:22px"></p>
-<p id="mDesc" style="margin-top:10px;line-height:1.6;color:#334155;font-size:14px"></p>
-<a id="mWa" target="_blank" class="btn-wa">💬 Buy This System — WhatsApp</a>
-<p style="text-align:center;margin-top:12px;color:#64748b;font-size:12px;cursor:pointer" onclick="closeModal()">✕ Tap outside to close</p>
+
+<div class="footer">
+© 2026 Excel Pro GH — Kenny Murray — 7 Best-Selling Systems in GHS ¢ — Premium V8<br>
+📧 <b>contact.excelprogh@gmail.com</b> | 📱 WhatsApp: +233 548 097 756 | 📍 Accra, Ghana 🇬🇭<br>Website: kennysmithderulo-cmyk.github.io/Excelprogh/<br><br>
+Trusted • Responsive • Results-Driven • Offline-Ready • No Subscription • Built for Ghana SMEs<br>
+Email us anytime at contact.excelprogh@gmail.com — Reply within 1 hour!
 </div>
 </div>
-</div>
+
+<a class="float" href="https://wa.me/233548097756">💬</a>
+
+<div id="modal" onclick="if(event.target.id==='modal')closeM()"><div class="mbox"><div class="mtop"><h2 id="mTitle" style="font-size:16px;color:#0f172a"></h2><div class="close" onclick="closeM()">×</div></div><div class="mgal" id="mGallery"></div><div class="minfo"><p id="mPrice" style="color:#16a34a;font-weight:900;font-size:22px"></p><p id="mDesc" style="margin-top:8px;color:#334155;line-height:1.6;font-size:14px"></p><a id="mWa" target="_blank" class="wa">💬 Buy This System — WhatsApp</a><p style="text-align:center;color:#64748b;font-size:12px;margin-top:10px;cursor:pointer" onclick="closeM()">Tap outside to close</p></div></div></div>
 
 <script>
-// YOUR 7 SYSTEMS - Using your uploaded 16 screenshots
-const projects = [
-{title:"Data Cleaning Systems",price:"GHS 200",cover:"data-cleaning.png",imgs:["data-cleaning.png","data-cleaning2.png","data-cleaning3.png"],desc:"Turns messy, duplicated data (10,000+ rows) into clean, accurate reports in 1 click. Built with Power Query, TRIM, LOWER, TEXT, removes duplicates automatically. Saves 96% time for Ghanaian businesses."},
-{title:"Auto Inventory System",price:"GHS 300",cover:"auto-inventory1.png",imgs:["auto-inventory1.png","auto-inventory2.png"],desc:"Automated inventory with LOWER(TRIM), TEXT(TODAY), IF error-proofing, Pivot + Slicers. 80% faster reporting for shops and SMEs. Offline-ready, no subscription."},
-{title:"Leave Tracker System",price:"GHS 250",cover:"leave-tracker.png",imgs:["leave-tracker.png","leave-tracker2.png","leave-tracker3.png"],desc:"Employee leave management — auto calculation of days, TEXT(TODAY), monthly pivot group. HR ready for Ghana companies."},
-{title:"Customer Tracker",price:"GHS 200",cover:"customer-tracker.png",imgs:["customer-tracker.png","customer-tracker1.png"],desc:"Manage 1000+ customers, XLOOKUP, payment status, follow-ups. Built for sales teams and agencies."},
-{title:"Sales Data Analytics",price:"GHS 250",cover:"sales-data.png",imgs:["sales-data.png","sales-data2.png","sales-data3.png"],desc:"VSTACK, LEFT+TEXT for codes, Monthly grouping, 10% commission calc field, combo charts. Executive dashboard."},
-{title:"Sales Portfolio Dashboard",price:"GHS 250",cover:"sales-portfolio.png",imgs:["sales-portfolio.png","sales-portfolio2.png","sales-portfolio3.png"],desc:"Complete sales portfolio with budget vs actual, SUMIF, pie charts, slicers for month/type. CEO-level view."},
-{title:"Personal Budget + Sales Suite",price:"GHS 150",cover:"sales-portfolio2.png",imgs:["sales-portfolio2.png","sales-portfolio3.png","sales-data3.png"],desc:"Personal budget + sales tracker combo. Best seller for individuals and small businesses in Ghana."}
+const projects=[
+{title:"Data Cleaning Systems",price:"→ ₵200",cover:"data-cleaning.png",imgs:["data-cleaning.png","data-cleaning2.png","data-cleaning3.png"],desc:"Turns messy 10,000+ rows into clean reports in 1 click. Power Query • TRIM LOWER TEXT • 96% time saved. 4hrs → 12min."},
+{title:"Personal Budget Tracker Ghana",price:"→ ₵150",cover:"sales-portfolio.png",imgs:["sales-portfolio.png","sales-portfolio2.png","sales-portfolio3.png"],desc:"GHS ¢ Income/Expense/Savings. Track ¢12,400 income / ¢8,650 expense / ¢3,750 savings. Budget breakdown + savings goal 94%. Result: Save ¢500-1500/mo."},
+{title:"Auto Inventory + Invoice Makola",price:"→ ₵300",cover:"auto-inventory1.png",imgs:["auto-inventory1.png","auto-inventory2.png"],desc:"Ghana Shops • Low Stock Alerts • VAT Invoice. 1,248 items, ¢85,420 sales, professional invoice INV-02389. Offline-ready, best-seller Accra."},
+{title:"Data Analytics Service",price:"→ ₵250",cover:"sales-data.png",imgs:["sales-data.png","sales-data2.png","sales-data3.png"],desc:"KPI dashboards, sales reports, business insights. Pure Excel dashboards, offline-ready for SMEs."},
+{title:"Website Developer Service",price:"→ From ₵500",cover:"sales-data3.png",imgs:["sales-data3.png","sales-portfolio3.png","sales-portfolio2.png"],desc:"Responsive • Landing Pages • E-commerce • SEO. Modern websites for Ghana SMEs. Fast, secure, SEO-ready like this site."},
+{title:"Virtual Assistant Service",price:"→ ₵400/mo",cover:"customer-tracker.png",imgs:["customer-tracker.png","customer-tracker1.png","leave-tracker.png"],desc:"Your remote pro partner in Accra. Inbox organization, scheduling, accurate data entry & research. Email • Calendar • Data Entry • Research • 15+ hrs saved. Result: Save 15+ hrs/week."},
+{title:"Customer Support & Operations",price:"→ ₵350/mo",cover:"leave-tracker.png",imgs:["leave-tracker.png","leave-tracker2.png","leave-tracker3.png","customer-tracker.png"],desc:"24/7 Call, Chat, CRM, Helpdesk, SLA. Dedicated phone support, live chat, email ticketing, CRM integration, Ghana-based professional team. Coverage: Helpdesk, Customer Success, Operations Monitoring."}
 ];
-
-const grid = document.getElementById('grid');
+const grid=document.getElementById('grid');
 projects.forEach((p,i)=>{
-const el = document.createElement('div');
-el.className='card';
-el.innerHTML = `
-<div class="card-img"><img src="${p.cover}" onerror="this.src='https://via.placeholder.com/600x300/16264e/fbbf24?text=${encodeURIComponent(p.title)}'" alt="${p.title}"></div>
-<div class="card-body">
-<h3>${p.title}</h3>
-<div class="sub">Power Query • Automation • 96% Time Saved</div>
-<div class="desc">${p.desc}</div>
-<div class="meta">
-<div><span class="badge">Excel</span> <span class="badge">Power Query</span></div>
-<span class="price">→ ${p.price}</span>
-</div>
-</div>`;
-// THIS MAKES TAP WORK - both click and touch
-el.addEventListener('click', ()=> openModal(i));
-el.addEventListener('touchend', (e)=> { e.preventDefault(); openModal(i); }, {passive:false});
+const el=document.createElement('div'); el.className='p-card';
+el.innerHTML=`<img src="${p.cover}" onerror="this.src='https://via.placeholder.com/600x360/081330/fbbf24?text=${encodeURIComponent(p.title)}'"><div class="p-body"><h3>${p.title}</h3><div class="p-sub">Power Query • Automation • Built for Ghana</div><div class="p-txt">${p.desc}</div><div class="pills"><span class="pill">Excel</span><span class="pill">GHS ¢</span><span class="pill">Offline</span></div><div class="p-foot"><span style="font-size:13px">Result: <b style="color:#fff">${p.title.includes('Budget')?'Save ¢500-1500':p.title.includes('Virtual')?'Save 15+ hrs':p.title.includes('Customer')?'Ghana-based team':'90% faster'}</b></span><span class="price-btn">${p.price}</span></div></div>`;
+el.addEventListener('click',()=>openM(i));
+el.addEventListener('touchend',(e)=>{e.preventDefault();openM(i);},{passive:false});
 grid.appendChild(el);
 });
-
-function openModal(i){
-const p = projects[i];
-document.getElementById('mTitle').innerText = p.title;
-document.getElementById('mPrice').innerText = p.price;
-document.getElementById('mDesc').innerText = p.desc;
-document.getElementById('mGallery').innerHTML = p.imgs.map(img=>`<img src="${img}" onerror="this.style.display='none'" alt="">`).join('');
-document.getElementById('mWa').href = `https://wa.me/233548097756?text=Hi%20Kenny,%20I%20want%20${encodeURIComponent(p.title)}%20${p.price}%20—%20${encodeURIComponent('https://excelprogh.vercel.app')}`;
-document.getElementById('modal').classList.add('open');
-document.body.style.overflow='hidden';
+function openM(i){
+const p=projects[i];
+document.getElementById('mTitle').innerText=p.title;
+document.getElementById('mPrice').innerText=p.price.replace('→','GHS ');
+document.getElementById('mDesc').innerText=p.desc;
+document.getElementById('mGallery').innerHTML=p.imgs.map(s=>`<img src="${s}" loading="lazy" onerror="this.style.display='none'">`).join('');
+document.getElementById('mWa').href=`https://wa.me/233548097756?text=Hi%20Kenny,%20I%20want%20${encodeURIComponent(p.title)}%20${p.price}`;
+document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';
 }
-function closeModal(){
-document.getElementById('modal').classList.remove('open');
-document.body.style.overflow='auto';
-}
+function closeM(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='auto';}
 </script>
 </body>
 </html>
