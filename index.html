@@ -6,53 +6,68 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
 body{background:#0f172a;color:#e2e8f0;display:flex;min-height:100vh}
-.sidebar{width:320px;background:#1e293b;padding:30px;position:fixed;height:100vh;overflow-y:auto}
+.sidebar{width:320px;background:#1e293b;padding:30px;position:fixed;height:100vh;overflow:auto}
 .sidebar h1{font-size:28px;font-weight:900}
 .main{margin-left:320px;flex:1;padding:40px;background:#f8fafc;color:#0f172a}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px}
-.card{background:white;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;cursor:pointer}
-.card-img{height:180px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:50px;color:white}
-.card-body{padding:16px}.card-body h3{font-size:15px;font-weight:800}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:999;overflow-y:auto}
+.card{background:white;border-radius:12px;overflow:hidden;cursor:pointer;border:1px solid #e2e8f0;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 15px 30px rgba(0,0,0,.15)}
+.card-img{height:220px;background:#f1f5f9;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:14px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:999;overflow:auto}
 .modal.active{display:flex;justify-content:center;padding:20px}
-.modal-content{background:white;border-radius:16px;max-width:800px;width:100%;margin:20px auto;padding:24px}
-@media(max-width:900px){body{flex-direction:column}.sidebar{position:relative;width:100%;height:auto}.main{margin-left:0}}
+.modal-content{background:white;border-radius:16px;max-width:950px;width:100%;margin:20px auto;overflow:hidden}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;padding:15px;background:#f8fafc}
+.gallery img{width:100%;border-radius:8px;border:1px solid #e2e8f0}
+@media(max-width:900px){body{flex-direction:column}.sidebar{position:relative;width:100%;height:auto}.main{margin-left:0;padding:16px}}
 </style>
 </head>
 <body>
 <div class="sidebar">
 <h1>KENNY MURRAY</h1>
 <p style="color:#60a5fa;font-weight:700;margin:8px 0 20px">Website Developer | Excel Pro GH</p>
-<p style="font-size:13px;color:#94a3b8;line-height:1.7">📍 Accra, Ghana<br>📞 +233 548097756<br>📧 contact.excelprogh@gmail.com<br>🌐 excelprogh.vercel.app</p>
-<p style="font-size:12px;color:#64748b;margin-top:20px">TAP ANY CARD → Opens details page</p>
+<p style="font-size:13px;color:#94a3b8;line-height:1.8">📍 Accra, Ghana<br>📞 +233 548097756<br>📧 contact.excelprogh@gmail.com</p>
+<div style="margin-top:20px;background:#0f172a;padding:12px;border-radius:8px;font-size:12px">✅ 16 Screenshots Uploaded<br>Tap card → Gallery opens</div>
 </div>
 <div class="main">
-<h2 style="font-weight:900;border-bottom:3px solid #1e40af;display:inline-block;padding-bottom:6px">PORTFOLIO SAMPLES — TAP TO VIEW</h2>
+<h2 style="font-weight:900;font-size:22px;border-bottom:4px solid #1e40af;display:inline-block;padding-bottom:6px">PORTFOLIO — 6 SYSTEMS LIVE</h2>
+<p style="color:#64748b;font-size:13px;margin-top:8px">Tap any system → See all screenshots + Buy</p>
 <div class="grid" id="grid"></div>
 </div>
+
 <div class="modal" id="modal"><div class="modal-content">
-<h2 id="mTitle"></h2><p id="mPrice" style="color:#16a34a;font-weight:900;font-size:22px;margin-top:8px"></p>
-<div id="mImg" style="height:300px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:60px;color:white;margin-top:16px"></div>
-<p id="mDesc" style="margin-top:12px;color:#334155;line-height:1.6"></p>
-<a id="mWa" target="_blank" style="display:block;background:#25D366;color:white;text-align:center;padding:16px;border-radius:10px;text-decoration:none;font-weight:800;margin-top:20px">Buy on WhatsApp</a>
-<p onclick="closeModal()" style="text-align:center;margin-top:15px;cursor:pointer">✕ Close</p>
+<div style="padding:18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e8f0"><h2 id="mTitle" style="font-weight:800;font-size:18px"></h2><span onclick="closeModal()" style="font-size:28px;cursor:pointer">×</span></div>
+<div class="gallery" id="mGallery"></div>
+<div style="padding:20px"><p id="mPrice" style="color:#16a34a;font-weight:900;font-size:22px"></p><p id="mDesc" style="margin-top:10px;color:#334155;line-height:1.6"></p><a id="mWa" target="_blank" style="display:block;background:#25D366;color:white;text-align:center;padding:16px;border-radius:10px;text-decoration:none;font-weight:900;margin-top:18px">💬 Buy This System — WhatsApp</a><p onclick="closeModal()" style="text-align:center;margin-top:12px;color:#64748b;cursor:pointer">✕ Close</p></div>
 </div></div>
+
 <script>
 const projects=[
-{id:"inventory-tracker",title:"Employee Leave & Inventory Tracker Dashboard",price:"GHS 300",emoji:"📦",desc:"Automated tracker with LOWER(TRIM), TEXT(TODAY), IF error-proofing, Pivot grouped by Month, Slicers. 80% faster reporting."},
-{id:"sales-analytics",title:"Sales Analytics Dashboard",price:"GHS 250",emoji:"📈",desc:"VSTACK, LEFT+TEXT for codes, Monthly grouping, Calculated Field for 10% commission."},
-{id:"budget-dashboard",title:"Budget Dashboard",price:"GHS 150",emoji:"💰",desc:"Income vs Expense, SUMIF, Pie Chart breakdown, Slicers for Month/Type."},
-{id:"customer-tracker",title:"Customer Tracker, AMA Email",price:"GHS 200",emoji:"👥",desc:"XLOOKUP upgrade, Professional templates, 5 business websites on Vercel."}
+{title:"Auto Inventory System",price:"GHS 300",cover:"auto-inventory1.png",imgs:["auto-inventory1.png","auto-inventory2.png"],desc:"Automated inventory with LOWER(TRIM), TEXT(TODAY), IF error-proofing, Pivot + Slicers. 80% faster reporting for SMEs."},
+{title:"Leave Tracker System",price:"GHS 250",cover:"leave-tracker.png",imgs:["leave-tracker.png","leave-tracker2.png","leave-tracker3.png"],desc:"Employee leave management, auto calculation of days, TEXT(TODAY), monthly pivot group."},
+{title:"Customer Tracker",price:"GHS 200",cover:"customer-tracker.png",imgs:["customer-tracker.png","customer-tracker1.png"],desc:"Manage 1000+ customers, XLOOKUP, payment status, follow-ups. SEO + Vercel ready."},
+{title:"Data Cleaning System",price:"GHS 180",cover:"data-cleaning.png",imgs:["data-cleaning.png","data-cleaning2.png","data-cleaning3.png"],desc:"Turn messy data to clean reports in 1 click — TRIM, LOWER, TEXT, duplicate removal."},
+{title:"Sales Data Analytics",price:"GHS 250",cover:"sales-data.png",imgs:["sales-data.png","sales-data2.png","sales-data3.png"],desc:"VSTACK, LEFT+TEXT for codes, Monthly grouping, 10% commission calc field, combo charts."},
+{title:"Sales Portfolio Dashboard",price:"GHS 250",cover:"sales-portfolio.png",imgs:["sales-portfolio.png","sales-portfolio2.png","sales-portfolio3.png"],desc:"Complete sales portfolio with budget vs actual, SUMIF, pie charts, slicers for month/type."}
 ];
 const grid=document.getElementById('grid');
 projects.forEach(p=>{
-const d=document.createElement('div');d.className='card';d.onclick=()=>openModal(p.id);
-d.innerHTML=`<div class="card-img">${p.emoji}</div><div class="card-body"><h3>${p.title}</h3><p style="color:#16a34a;font-weight:800;margin-top:6px">${p.price} • Tap to view →</p></div>`;
+const d=document.createElement('div');d.className='card';d.onclick=()=>openModal(p.title);
+d.innerHTML=`<div class="card-img"><img src="${p.cover}" onerror="this.src='https://via.placeholder.com/400x220?text=${encodeURIComponent(p.title)}'"></div><div class="card-body"><h3 style="font-size:14px;font-weight:800">${p.title}</h3><p style="font-size:12px;color:#64748b;margin-top:4px">${p.imgs.length} screenshots</p><p style="color:#16a34a;font-weight:800;margin-top:6px;font-size:13px">${p.price} • Tap →</p></div>`;
 grid.appendChild(d);
 });
-function openModal(id){const p=projects.find(x=>x.id===id);mTitle.innerText=p.title;mPrice.innerText=p.price;mDesc.innerText=p.desc;mImg.innerText=p.emoji;mWa.href=`https://wa.me/233548097756?text=Hi%20Kenny,%20I%20want%20${encodeURIComponent(p.title)}%20${p.price}`;modal.classList.add('active');}
-function closeModal(){modal.classList.remove('active');}
-modal.addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+function openModal(title){
+const p=projects.find(x=>x.title===title);
+document.getElementById('mTitle').innerText=p.title;
+document.getElementById('mPrice').innerText=p.price;
+document.getElementById('mDesc').innerText=p.desc;
+document.getElementById('mGallery').innerHTML=p.imgs.map(i=>`<img src="${i}" onerror="this.style.display='none'">`).join('');
+document.getElementById('mWa').href=`https://wa.me/233548097756?text=Hi%20Kenny,%20I%20want%20${encodeURIComponent(p.title)}%20${p.price}`;
+document.getElementById('modal').classList.add('active');
+}
+function closeModal(){document.getElementById('modal').classList.remove('active');}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
 </script>
 </body>
 </html>
