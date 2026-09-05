@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenny Murray - Excel Pro GH</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+body{background:#0f172a;color:#e2e8f0;display:flex;min-height:100vh}
+.sidebar{width:320px;background:#1e293b;padding:30px;position:fixed;height:100vh;overflow-y:auto}
+.sidebar h1{font-size:28px;font-weight:900}
+.main{margin-left:320px;flex:1;padding:40px;background:#f8fafc;color:#0f172a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px}
+.card{background:white;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;cursor:pointer}
+.card-img{height:180px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:50px;color:white}
+.card-body{padding:16px}.card-body h3{font-size:15px;font-weight:800}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:999;overflow-y:auto}
+.modal.active{display:flex;justify-content:center;padding:20px}
+.modal-content{background:white;border-radius:16px;max-width:800px;width:100%;margin:20px auto;padding:24px}
+@media(max-width:900px){body{flex-direction:column}.sidebar{position:relative;width:100%;height:auto}.main{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h1>KENNY MURRAY</h1>
+<p style="color:#60a5fa;font-weight:700;margin:8px 0 20px">Website Developer | Excel Pro GH</p>
+<p style="font-size:13px;color:#94a3b8;line-height:1.7">📍 Accra, Ghana<br>📞 +233 548097756<br>📧 contact.excelprogh@gmail.com<br>🌐 excelprogh.vercel.app</p>
+<p style="font-size:12px;color:#64748b;margin-top:20px">TAP ANY CARD → Opens details page</p>
+</div>
+<div class="main">
+<h2 style="font-weight:900;border-bottom:3px solid #1e40af;display:inline-block;padding-bottom:6px">PORTFOLIO SAMPLES — TAP TO VIEW</h2>
+<div class="grid" id="grid"></div>
+</div>
+<div class="modal" id="modal"><div class="modal-content">
+<h2 id="mTitle"></h2><p id="mPrice" style="color:#16a34a;font-weight:900;font-size:22px;margin-top:8px"></p>
+<div id="mImg" style="height:300px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:60px;color:white;margin-top:16px"></div>
+<p id="mDesc" style="margin-top:12px;color:#334155;line-height:1.6"></p>
+<a id="mWa" target="_blank" style="display:block;background:#25D366;color:white;text-align:center;padding:16px;border-radius:10px;text-decoration:none;font-weight:800;margin-top:20px">Buy on WhatsApp</a>
+<p onclick="closeModal()" style="text-align:center;margin-top:15px;cursor:pointer">✕ Close</p>
+</div></div>
+<script>
+const projects=[
+{id:"inventory-tracker",title:"Employee Leave & Inventory Tracker Dashboard",price:"GHS 300",emoji:"📦",desc:"Automated tracker with LOWER(TRIM), TEXT(TODAY), IF error-proofing, Pivot grouped by Month, Slicers. 80% faster reporting."},
+{id:"sales-analytics",title:"Sales Analytics Dashboard",price:"GHS 250",emoji:"📈",desc:"VSTACK, LEFT+TEXT for codes, Monthly grouping, Calculated Field for 10% commission."},
+{id:"budget-dashboard",title:"Budget Dashboard",price:"GHS 150",emoji:"💰",desc:"Income vs Expense, SUMIF, Pie Chart breakdown, Slicers for Month/Type."},
+{id:"customer-tracker",title:"Customer Tracker, AMA Email",price:"GHS 200",emoji:"👥",desc:"XLOOKUP upgrade, Professional templates, 5 business websites on Vercel."}
+];
+const grid=document.getElementById('grid');
+projects.forEach(p=>{
+const d=document.createElement('div');d.className='card';d.onclick=()=>openModal(p.id);
+d.innerHTML=`<div class="card-img">${p.emoji}</div><div class="card-body"><h3>${p.title}</h3><p style="color:#16a34a;font-weight:800;margin-top:6px">${p.price} • Tap to view →</p></div>`;
+grid.appendChild(d);
+});
+function openModal(id){const p=projects.find(x=>x.id===id);mTitle.innerText=p.title;mPrice.innerText=p.price;mDesc.innerText=p.desc;mImg.innerText=p.emoji;mWa.href=`https://wa.me/233548097756?text=Hi%20Kenny,%20I%20want%20${encodeURIComponent(p.title)}%20${p.price}`;modal.classList.add('active');}
+function closeModal(){modal.classList.remove('active');}
+modal.addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+</script>
+</body>
+</html>
